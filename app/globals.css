@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AmsiPro Fonts */
+@font-face {
+  font-family: 'AmsiPro';
+  src: url('/fonts/AmsiPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AmsiPro';
+  src: url('/fonts/AmsiPro-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 240 8% 95%;
+    --foreground: 0 0% 14%;
+    --card: 240 8% 95%;
+    --card-foreground: 0 0% 14%;
+    --popover: 240 8% 95%;
+    --popover-foreground: 0 0% 14%;
+    --primary: 20 80% 52%;
+    --primary-foreground: 0 0% 14%;
+    --secondary: 240 8% 93%;
+    --secondary-foreground: 0 0% 14%;
+    --muted: 0 0% 82%;
+    --muted-foreground: 216 12% 43%;
+    --accent: 40 100% 51%;
+    --accent-foreground: 0 0% 14%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 29% 91%;
+    --input: 0 0% 85
+    %;
+    --ring: 20 80% 52%;
+    --radius: 0.5rem;
+    
+    /* Chart Colors */
+    --chart-1: 20 80% 52%;
+    --chart-2: 40 100% 51%;
+    --chart-3: 216 12% 43%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 240 8% 60%;
+    
+    /* Font Variables */
+    --font-body: 'AmsiPro', sans-serif;
+    --font-heading: 'AmsiPro', sans-serif;
+    
+    /* Shadow Variables */
+    --shadow-neumorphic: -1px -1px 3px 0 #FFF, 1.5px 1.5px 3px 0 rgba(174, 174, 192, 0.40);
+    --shadow-neumorphic-inset: inset -1px -1px 3px 0 #FFF, inset 1.5px 1.5px 3px 0 rgba(174, 174, 192, 0.40);
+  }
+
+  .dark {
+    --background:  216 18% 7%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 100%;  
+    --card-foreground: 0 0% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 14%;
+    --primary: 20 80% 52%;
+    --primary-foreground: 0 0% 14%;
+    --secondary: 216 18% %;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 82%;
+    --muted-foreground: 216 12% 45%;
+    --accent: 40 100% 51%;
+    --accent-foreground: 0 0% 14%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 216 18% 15%;
+    --input: 207 10% 25%;
+    --ring: 20 80% 52%;
+    
+    /* Chart Colors for Dark Mode */
+    --chart-1: 20 80% 52%;
+    --chart-2: 40 100% 51%;
+    --chart-3: 216 12% 43%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 240 8% 60%;
+    
+    /* Shadow Variables for Dark Mode */
+    --shadow-neumorphic: -1px -1px 3px 0 rgba(255, 255, 255, 0.033), 1.5px 1.5px 3px 0 rgba(0, 0, 0, 0.478);
+    --shadow-neumorphic-inset: inset -1px -1px 3px 0 rgba(255, 255, 255, 0.1), inset 1.5px 1.5px 3px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+}
+
+/* Logo dark mode styles */
+.dark .logo-container img {
+  filter: brightness(0) invert(1);
+}
+
+/* Hero gradient styles */
+.hero-gradient {
+  background: linear-gradient(359deg, #4A6A93 19.71%, #F0F0F3 91.01%);
+}
+
+.dark .hero-gradient {
+  background: linear-gradient(359deg, #4A6A93 19.71%, #101215 91.01%);
+}
+
+.hero-gradient-nosotros {
+  background: linear-gradient(to top, #bee3f3 100%, #6e848d 183.69%);
+}
+
+/* Neumorphic shadow utility class */
+.shadow-neumorphic {
+  box-shadow: var(--shadow-neumorphic);
+}
+
+.shadow-neumorphic-inset {
+  box-shadow: var(--shadow-neumorphic-inset);
+}
+
+
