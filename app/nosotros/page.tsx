@@ -41,7 +41,7 @@ export default function Nosotros() {
               <Button asChild size="lg" className="h-12 px-4">
                 <Link href="/resultados">Conoce nuestras soluciones</Link>
               </Button>
-              <Button asChild variant="secondary" size="lg" className="h-12 px-4">
+              <Button asChild variant="secondary" size="lg" >
                 <Link href="/contacto">Contactanos</Link>
               </Button>
             </div>

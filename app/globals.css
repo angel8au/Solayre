@@ -71,13 +71,13 @@
     --secondary: 216 18% %;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 82%;
-    --muted-foreground: 216 12% 45%;
+    --muted-foreground: 216 12% 60%;
     --accent: 40 100% 51%;
     --accent-foreground: 0 0% 14%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
     --border: 216 18% 15%;
-    --input: 207 10% 25%;
+    --input: 216 18% 15%;
     --ring: 20 80% 52%;
     
     /* Chart Colors for Dark Mode */

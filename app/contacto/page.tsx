@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Globe, Phone, Mail } from "lucide-react"
+import Link from "next/link"
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
@@ -51,22 +53,44 @@ export default function Contacto() {
                 Puedes contactarnos a través de los siguientes medios
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-6">
               <div>
-                <h3 className="mb-2 font-semibold">Email</h3>
-                <p className="text-muted-foreground">info@solayre.com</p>
+                <div className="flex items-center gap-3 mb-2">
+                  <Globe className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold">Sitio Web</h3>
+                </div>
+                <Link 
+                  href="https://solayre.mx" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  solayre.mx
+                </Link>
               </div>
               <div>
-                <h3 className="mb-2 font-semibold">Teléfono</h3>
-                <p className="text-muted-foreground">+34 900 000 000</p>
+                <div className="flex items-center gap-3 mb-2">
+                  <Phone className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold">Llamadas y consultas</h3>
+                </div>
+                <Link 
+                  href="tel:6677550044" 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  667 755 00 44
+                </Link>
               </div>
               <div>
-                <h3 className="mb-2 font-semibold">Horario de Atención</h3>
-                <p className="text-muted-foreground">
-                  Lunes a Viernes: 9:00 - 18:00
-                  <br />
-                  Sábados: 10:00 - 14:00
-                </p>
+                <div className="flex items-center gap-3 mb-2">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold">Correo electrónico</h3>
+                </div>
+                <Link 
+                  href="mailto:victorlrojo@solayre.mx" 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  victorlrojo@solayre.mx
+                </Link>
               </div>
             </CardContent>
           </Card>
