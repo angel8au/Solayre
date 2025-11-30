@@ -31,15 +31,14 @@
     --primary-foreground: 0 0% 14%;
     --secondary: 240 8% 93%;
     --secondary-foreground: 0 0% 14%;
-    --muted: 0 0% 82%;
+    --muted: 240 8% 82%;
     --muted-foreground: 216 12% 43%;
     --accent: 40 100% 51%;
     --accent-foreground: 0 0% 14%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 29% 91%;
-    --input: 0 0% 85
-    %;
+    --border: 214 29% 85%;
+    --input: 0 0% 85%;
     --ring: 20 80% 52%;
     --radius: 0.5rem;
     
@@ -61,23 +60,23 @@
 
   .dark {
     --background:  216 18% 7%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 100%;  
-    --card-foreground: 0 0% 14%;
+    --foreground: 216 18% 98%;
+    --card: 216 18% 7%;
+    --card-foreground: 216 18% 98%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 14%;
     --primary: 20 80% 52%;
     --primary-foreground: 0 0% 14%;
     --secondary: 216 18% 8%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 82%;
+    --muted: 216 18% 15%;
     --muted-foreground: 216 12% 60%;
     --accent: 40 100% 51%;
     --accent-foreground: 0 0% 14%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 216 18% 15%;
-    --input: 216 18% 15%;
+    --border: 216 18% 13%;
+    --input: 216 18% 19%;
     --ring: 20 80% 52%;
     
     /* Chart Colors for Dark Mode */
@@ -88,7 +87,7 @@
     --chart-5: 240 8% 60%;
     
     /* Shadow Variables for Dark Mode */
-    --shadow-neumorphic: -1px -1px 3px 0 rgba(255, 255, 255, 0.033), 1.5px 1.5px 3px 0 rgba(0, 0, 0, 0.478);
+    --shadow-neumorphic: -1px -1px 3px 0 rgba(255, 255, 255, 0.2), 1.5px 1.5px 3px 0 rgba(0, 0, 0, 0.811);
     --shadow-neumorphic-inset: inset -1px -1px 3px 0 rgba(255, 255, 255, 0.1), inset 1.5px 1.5px 3px 0 rgba(0, 0, 0, 0.5);
   }
 }
@@ -135,4 +134,11 @@
   box-shadow: var(--shadow-neumorphic-inset);
 }
 
-
+.shadow-button {
+box-shadow: -2px -2.6px 1.6px 0 #fc812fb4, 1.6px 1.6px 5px 0 #8a400f8e;
+}
+.shadow-button:active {
+  box-shadow: inset -3px -3px 1px 0 #fc812f99,
+               inset 3px 3px 5px 0 #8a400f99;
+  
+}

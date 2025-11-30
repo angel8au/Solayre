@@ -11,13 +11,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background ">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container px-4 flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Logo />
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden  md:flex items-center space-x-6">
           <Link
             href="/"
             className="text-sm font-bold transition-colors hover:text-primary"
@@ -50,7 +50,9 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden flex items-center shadow-neumorphic justify-center w-10 h-10"
+          className={`md:hidden flex items-center justify-center w-10 h-10 ${
+            isMenuOpen ? 'shadow-neumorphic-inset' : 'shadow-neumorphic active:shadow-neumorphic-inset'
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -75,31 +77,31 @@ export function Header() {
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <nav className="md:hidden border-t bg-background">
-          <div className="container flex flex-col py-4 space-y-4">
+          <div className="px-4  flex flex-col py-4 space-y-4">
             <Link
               href="/"
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium py-3 transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Inicio
             </Link>
             <Link
               href="/nosotros"
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium py-3 transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Nosotros
             </Link>
             <Link
               href="/resultados"
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium py-3 transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Resultados
             </Link>
             <Link
               href="/contacto"
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium py-3 transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Contacto

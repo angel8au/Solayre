@@ -16,10 +16,10 @@ interface ProjectDetailPageProps {
 
 export async function generateStaticParams() {
   try {
-    const projects = getAllProjects()
+  const projects = getAllProjects()
     const slugs = projects.map((project) => ({
-      slug: project.slug,
-    }))
+    slug: project.slug,
+  }))
     console.log('Generating static params for projects:', slugs.map(p => p.slug))
     return slugs
   } catch (error) {
@@ -37,14 +37,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   
   const project = getProjectBySlug(slug)
   
-  // Debug: Log para verificar qué está pasando
   if (!project) {
     console.error(`Project not found for slug: ${slug}`)
     console.log('Available projects:', getAllProjects().map(p => p.slug))
-    notFound()
-  }
-
-  if (!project) {
     notFound()
   }
 
@@ -82,11 +77,11 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
       <div className="container mx-auto px-4 py-12">
         {/* Back Button */}
-        <div className="mb-8">
-          <Button variant="ghost" asChild>
-            <Link href="/resultados">← Volver a Resultados</Link>
-          </Button>
-        </div>
+      <div className="mb-8">
+        <Button variant="ghost" asChild>
+          <Link href="/resultados">← Volver a Resultados</Link>
+        </Button>
+      </div>
 
         {/* Key Metrics Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -139,9 +134,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
             {/* Project Description */}
             <div>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                {project.description}
-              </p>
-            </div>
+            {project.description}
+          </p>
+        </div>
 
             {/* Problem Section */}
             <div>
@@ -250,11 +245,11 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
             <div>
               <p className="text-sm opacity-90 mb-1">ROI 25 años</p>
               <p className="text-xl font-bold">{project.roi || "N/A"}</p>
-            </div>
+          </div>
             <div>
               <p className="text-sm opacity-90 mb-1">Ahorro acumulado</p>
               <p className="text-xl font-bold">{project.savings25Years || "N/A"}</p>
-            </div>
+          </div>
           </div>
         </div>
 
@@ -273,7 +268,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                     fallbackClassName="w-full h-full rounded-lg"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                </div>
+        </div>
               ))}
             </div>
           </div>
