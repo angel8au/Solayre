@@ -5,13 +5,13 @@ export default function Resultados() {
   const projects = getAllProjects()
 
   return (
-    <div className="container py-20">
-      <div className="mb-12 text-center">
+    <div className="container py-10">
+      <div className="mb-12 text-left">
         <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
-          Nuestros Proyectos
+        Resultados reales con energía solar
         </h1>
         <p className="text-lg text-muted-foreground">
-          Descubre algunos de nuestros proyectos de instalación de paneles solares
+        Historias de ahorro, eficiencia y transformación energética en hogares, negocios y gobierno.
         </p>
       </div>
 

@@ -10,15 +10,15 @@ export default function Nosotros() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section 
-        className="relative w-full overflow-hidden h-[600px] sm:h-[700px] md:h-[800px] lg:h-[886px] hero-gradient-nosotros"
+        className="relative w-full overflow-hidden h-[700px] sm:h-[600px] md:h-[700px] lg:h-[800px] hero-gradient-nosotros"
       >
         {/* Hero Image Background */}
-        <div className="absolute bottom-0 left-0 right-0 w-full h-[479px]">
+        <div className="absolute bottom-0 left-0 right-0 w-full h-full">
           <ImageWithFallback
             src="/images/hero-aboutus.png"
             alt="Hero Nosotros"
             fill
-            className="object-cover object-center"
+            className="object-contain object-bottom w-full"
             fallbackClassName="w-full h-full"
             priority
             sizes="100vw"
@@ -28,9 +28,7 @@ export default function Nosotros() {
         {/* Hero Content Overlay */}
         <div className="absolute left-1/2 top-[72px] z-10 w-full -translate-x-1/2 px-4">
           <div className="mx-auto max-w-5xl text-center flex flex-col gap-7">
-            <p className="text-lg font-bold uppercase tracking-wider text-[#2d2d2d]">
-              nosotros
-            </p>
+        
             <h1 className="text-4xl font-bold leading-tight text-[#2d2d2d] sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[60px] text-balance">
               Transformamos la energía solar en ahorro real para tu hogar o negocio
             </h1>

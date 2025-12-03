@@ -35,7 +35,7 @@ export default function Contacto() {
 
   return (
     <div className="container py-20">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-5xl">
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
             Contacto
