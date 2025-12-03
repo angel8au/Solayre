@@ -4,10 +4,11 @@ Proyecto de sitio web para Solayre, empresa de instalación de paneles solares.
 
 ## Características
 
-- **Next.js 14** con App Router
+- **Next.js 16** con App Router
 - **TypeScript** para type safety
 - **Tailwind CSS** para estilos
 - **ShadCN UI** para componentes
+- **pnpm** como gestor de paquetes
 - Páginas: Home, Nosotros, Resultados, Contacto
 - Estructura preparada para integración con CMS
 
@@ -39,19 +40,31 @@ Solayre/
     └── project.ts          # Tipos TypeScript para proyectos
 ```
 
+## Requisitos Previos
+
+- Node.js >= 20.9.0
+- pnpm (instalar con `npm install -g pnpm`)
+
 ## Instalación
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## Desarrollo
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+## Scripts Disponibles
+
+- `pnpm dev` - Inicia el servidor de desarrollo
+- `pnpm build` - Construye la aplicación para producción
+- `pnpm start` - Inicia el servidor de producción
+- `pnpm lint` - Ejecuta el linter
 
 ## Estructura CMS-Ready
 
