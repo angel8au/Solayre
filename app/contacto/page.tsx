@@ -1,182 +1,80 @@
 "use client"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Globe, Phone, Mail } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { Calculator } from "lucide-react"
+
+// WhatsApp Icon SVG Component
+const WhatsAppIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+  </svg>
+)
 
 export default function Contacto() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Aquí se implementaría la lógica de envío del formulario
-    console.log("Formulario enviado:", formData)
-    alert("¡Gracias por tu mensaje! Te contactaremos pronto.")
-    setFormData({ name: "", email: "", phone: "", message: "" })
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  // Mensaje predefinido para WhatsApp
+  const whatsappMessage = encodeURIComponent(
+    "¡Hola! Me interesa conocer más sobre las soluciones de energía solar de Solayre. ¿Podrían ayudarme?"
+  )
+  const whatsappNumber = "6677550044"
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   return (
     <div className="container py-20">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-12 text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
-            Contacto
+      <div className="mx-auto max-w-3xl">
+        {/* Header Section */}
+        <div className="mb-16 text-center">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+            Hablemos de tu proyecto
           </h1>
-          <p className="text-lg text-muted-foreground">
-            ¿Tienes alguna pregunta? Estamos aquí para ayudarte
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl">
+            Estamos aquí para ayudarte a encontrar la solución de energía solar perfecta para tu hogar o negocio. 
+            Contáctanos y recibe asesoría personalizada.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          <Card>
-            <CardHeader>
-              <CardTitle>Información de Contacto</CardTitle>
-              <CardDescription>
-                Puedes contactarnos a través de los siguientes medios
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <Globe className="h-5 w-5 text-primary" />
-                  <h3 className="font-semibold">Sitio Web</h3>
-                </div>
-                <Link 
-                  href="https://solayre.mx" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  solayre.mx
-                </Link>
-              </div>
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <h3 className="font-semibold">Llamadas y consultas</h3>
-                </div>
-                <Link 
-                  href="tel:6677550044" 
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  667 755 00 44
-                </Link>
-              </div>
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <h3 className="font-semibold">Correo electrónico</h3>
-                </div>
-                <Link 
-                  href="mailto:victorlrojo@solayre.mx" 
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  victorlrojo@solayre.mx
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
+        {/* CTA Buttons Section */}
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+          {/* WhatsApp Button - Primary CTA */}
+          <Link
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "lg" }),
+              "group relative h-14 bg-[#25D366] px-8 text-base font-bold text-white hover:text-white shadow-lg transition-all hover:bg-[#20BA5A] hover:shadow-xl active:scale-[0.98] sm:px-12 flex items-center justify-center gap-3 pointer-events-auto"
+            )}
+          >
+            <WhatsAppIcon className="h-6 w-6 flex-shrink-0" />
+            <span>Contáctanos por WhatsApp</span>
+          </Link>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Envíanos un Mensaje</CardTitle>
-              <CardDescription>
-                Completa el formulario y te responderemos lo antes posible
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    Nombre Completo
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Tu nombre"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="tu@email.com"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    Teléfono
-                  </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+34 600 000 000"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    Mensaje
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Cuéntanos sobre tu proyecto..."
-                    rows={5}
-                  />
-                </div>
-                <Button type="submit" className="w-full" size="lg">
-                  Enviar Mensaje
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          {/* Calculator Button - Secondary CTA */}
+          <Link
+            href="https://calculadora.solayre.mx/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              buttonVariants({ variant: "secondary", size: "lg" }),
+              "h-14 px-8 text-base font-bold sm:px-12 flex items-center justify-center gap-3"
+            )}
+          >
+            <Calculator className="h-5 w-5" />
+            <span>Calcular mi ahorro</span>
+          </Link>
+        </div>
+
+        {/* Additional Info Section */}
+        <div className="mt-16 text-center">
+          <p className="text-sm text-muted-foreground">
+            Responde en menos de 24 horas • Consulta gratuita • Sin compromiso
+          </p>
         </div>
       </div>
     </div>
