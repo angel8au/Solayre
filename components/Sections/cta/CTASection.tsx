@@ -15,6 +15,8 @@ interface CTASectionProps {
 }
 
 export function CTASection({ title, subtitle, primaryButton, secondaryButton }: CTASectionProps) {
+  const isExternalLink = (href: string) => href.startsWith('http://') || href.startsWith('https://')
+  
   return (
     <section className="py-20">
       <div className="container px-4 md:px-6">
@@ -27,11 +29,21 @@ export function CTASection({ title, subtitle, primaryButton, secondaryButton }: 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button asChild size="lg">
-              <Link href={primaryButton.href}>{primaryButton.text}</Link>
+              <Link 
+                href={primaryButton.href}
+                {...(isExternalLink(primaryButton.href) && { target: "_blank", rel: "noopener noreferrer" })}
+              >
+                {primaryButton.text}
+              </Link>
             </Button>
             {secondaryButton && (
               <Button asChild variant="secondary" size="lg">
-                <Link href={secondaryButton.href}>{secondaryButton.text}</Link>
+                <Link 
+                  href={secondaryButton.href}
+                  {...(isExternalLink(secondaryButton.href) && { target: "_blank", rel: "noopener noreferrer" })}
+                >
+                  {secondaryButton.text}
+                </Link>
               </Button>
             )}
           </div>

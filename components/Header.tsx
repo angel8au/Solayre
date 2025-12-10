@@ -43,7 +43,7 @@ export function Header() {
             Contacto
           </Link>
           <Button asChild>
-            <Link href="#calculadora">Calculadora</Link>
+            <Link href="https://calculadora.solayre.mx/" target="_blank" rel="noopener noreferrer">Calculadora</Link>
           </Button>
           <ThemeToggle />
         </nav>
@@ -107,7 +107,7 @@ export function Header() {
               Contacto
             </Link>
             <Button asChild className="w-full">
-              <Link href="#calculadora" onClick={() => setIsMenuOpen(false)}>
+              <Link href="https://calculadora.solayre.mx/" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
                 Calculadora
               </Link>
             </Button>

@@ -37,10 +37,10 @@ export default function Nosotros() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild size="lg" className="h-12 px-4">
-                <Link href="/resultados">Conoce nuestras soluciones</Link>
+                <Link href="/resultados">Ver proyectos reales</Link>
               </Button>
               <Button asChild variant="secondary" size="lg" >
-                <Link href="/contacto">Contactanos</Link>
+                <Link href="https://calculadora.solayre.mx/" target="_blank" rel="noopener noreferrer">Calcular mi ahorro</Link>
               </Button>
             </div>
           </div>
@@ -161,10 +161,14 @@ export default function Nosotros() {
       {/* CTA Section */}
       <CTASection
         title="Haz que tu hogar genere su propia energía"
-        subtitle="Cambia a energía solar con un sistema diseñado a tu medida y empieza a ver resultados desde el primer mes."
+        subtitle="Sistema solar diseñado a tu medida. Empieza a ahorrar desde el primer mes y recupera tu inversión en menos tiempo."
         primaryButton={{
-          text: "Conoce nuestras soluciones",
+          text: "Ver proyectos reales",
           href: "/resultados"
+        }}
+        secondaryButton={{
+          text: "Calcular mi ahorro",
+          href: "https://calculadora.solayre.mx/"
         }}
       />
     </div>

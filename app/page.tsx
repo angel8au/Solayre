@@ -37,7 +37,7 @@ export default function Home() {
               </p>
             </div>
             <Button asChild size="lg" className="px-4 py-2">
-              <Link href="#calculadora">Calculadora solar</Link>
+              <Link href="https://calculadora.solayre.mx/" target="_blank" rel="noopener noreferrer">Calcula tu ahorro ahora</Link>
             </Button>
           </div>
         </div>
@@ -83,10 +83,14 @@ export default function Home() {
       {/* CTA Section */}
       <CTASection
         title="¿Listo para comenzar?"
-        subtitle="Contacta con nosotros para una consulta gratuita y descubre cómo la energía solar puede transformar tu hogar o negocio."
+        subtitle="Obtén una consulta gratuita y personalizada. Descubre cuánto puedes ahorrar con energía solar en tu hogar o negocio."
         primaryButton={{
-          text: "Solicitar Consulta",
+          text: "Solicitar consulta gratis",
           href: "/contacto"
+        }}
+        secondaryButton={{
+          text: "Calcular mi ahorro",
+          href: "https://calculadora.solayre.mx/"
         }}
       />
     </div>

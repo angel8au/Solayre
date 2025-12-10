@@ -297,9 +297,12 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         )}
 
         {/* CTA Button */}
-        <div className="flex justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button asChild size="lg">
-            <Link href="/contacto">Solicitar Consulta Similar</Link>
+            <Link href="/contacto">Quiero un proyecto similar</Link>
+          </Button>
+          <Button asChild variant="secondary" size="lg">
+            <Link href="https://calculadora.solayre.mx/" target="_blank" rel="noopener noreferrer">Calcular mi ahorro</Link>
           </Button>
         </div>
       </div>
