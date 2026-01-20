@@ -3,6 +3,7 @@ import "./globals.css"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { ThemeProvider } from "@/components/ThemeProvider"
+import { GoogleTagManager } from "@/components/GoogleTagManager"
 
 export const metadata: Metadata = {
   title: "Solayre - Energía Solar",
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body>
+        <GoogleTagManager />
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
