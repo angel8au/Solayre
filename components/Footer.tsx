@@ -28,12 +28,12 @@ export function Footer() {
             >
               Nosotros
             </Link>
-            <Link
+            {/* <Link
               href="/resultados"
               className="text-sm font-medium transition-colors hover:text-primary"
             >
               Resultados
-            </Link>
+            </Link> */}
             <Link
               href="/contacto"
               className="text-sm font-medium transition-colors hover:text-primary"

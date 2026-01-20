@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ImageWithFallback } from "@/components/ui/image-with-fallback"
 import { SolucionesSection } from "@/components/Sections/soluciones/SolucionesSection"
-import { ProjectSection } from "@/components/Sections/project/ProjectSection"
+// import { ProjectSection } from "@/components/Sections/project/ProjectSection"
 import { CTASection } from "@/components/Sections/cta/CTASection"
 
 export default function Home() {
@@ -78,7 +78,7 @@ export default function Home() {
 
 
       {/* Project Section */}
-      <ProjectSection />
+      {/* <ProjectSection /> */}
 
       {/* CTA Section */}
       <CTASection

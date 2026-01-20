@@ -30,12 +30,12 @@ export function Header() {
           >
             Nosotros
           </Link>
-          <Link
+          {/* <Link
             href="/resultados"
             className="text-sm font-bold transition-colors hover:text-primary"
           >
             Resultados
-          </Link>
+          </Link> */}
           <Link
             href="/contacto"
             className="text-sm font-bold transition-colors hover:text-primary"
@@ -92,13 +92,13 @@ export function Header() {
             >
               Nosotros
             </Link>
-            <Link
+            {/* <Link
               href="/resultados"
               className="text-sm font-medium py-3 transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Resultados
-            </Link>
+            </Link> */}
             <Link
               href="/contacto"
               className="text-sm font-medium py-3 transition-colors hover:text-primary"
